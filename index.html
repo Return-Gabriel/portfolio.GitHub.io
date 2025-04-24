@@ -447,33 +447,34 @@
               <div class="row">
                 <div class="form-item col-6 padd-15">
                   <div class="form-group">
-                    <input type="text" class="form-control" name="nome" placeholder="Nome" required>
+                    <input type="text" class="form-control" placeholder="Nome">
                   </div>
                 </div>
-        
+
                 <div class="form-item col-6 padd-15">
                   <div class="form-group">
-                    <input type="email" class="form-control" name="email" placeholder="Email" required>
+                    <input type="email" class="form-control" placeholder="Email">
                   </div>
                 </div>
               </div>
-        
+
               <div class="row">
                 <div class="form-item col-12 padd-15">
                   <div class="form-group">
-                    <input type="text" class="form-control" name="assunto" placeholder="Assunto" required>
+                    <input type="text" class="form-control" placeholder="Assunto">
                   </div>
                 </div>
               </div>
-        
+
               <div class="row">
                 <div class="form-item col-12 padd-15">
                   <div class="form-group">
-                    <textarea name="mensagem" class="form-control" placeholder="Mensagem" required></textarea>
+                    <textarea name="message" id="message" class="form-control" placeholder="Mensagem
+                    "></textarea>
                   </div>
                 </div>
               </div>
-        
+
               <div class="row">
                 <div class="form-item col-12 padd-15">
                   <div class="form-group">
@@ -514,31 +515,8 @@
 
 
 <script>
-document.getElementById('contactForm').addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    const formData = new FormData(this);
-    const data = Object.fromEntries(formData.entries());
-
-    try {
-      const response = await fetch('http://localhost:3000/enviar-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-
-      const result = await response.text();
-      alert(result);
-    } catch (error) {
-      alert('Erro ao enviar mensagem.');
-      console.error(error);
-    }
-  });
-
 
 /* Toggle Style Switcher */
-
-
 
 const styleSwitcherToggle = document.querySelector(".style-switcher-toggler");
 styleSwitcherToggle.addEventListener("click", () => {
